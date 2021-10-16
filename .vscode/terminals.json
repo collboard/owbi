@@ -1,0 +1,10 @@
+{
+    "autokill": true,
+    "@see": "https://marketplace.visualstudio.com/items?itemName=fabiospampinato.vscode-terminals",
+    "terminals": [
+        {
+            "name": "👨🏽‍💻🔥 Server develop",
+            "command": "npm run server-develop"
+        }
+    ]
+}
