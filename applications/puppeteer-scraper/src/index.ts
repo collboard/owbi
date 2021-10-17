@@ -17,6 +17,5 @@ async function main() {
     process.exit(0);
 
     // TODO: On error process.exit(1);
-
     // TODO: await (await whiteboard.toBlob()).stream()
 }
