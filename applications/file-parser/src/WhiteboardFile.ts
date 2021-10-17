@@ -9,14 +9,16 @@ export class WhiteboardFile {
     }
 
     private commits: ICommit<IDataType>[] = [];
-    private assets = [];
+    private assets: Array<{ path: string; content: string | Blob | Buffer }> = [];
 
     private constructor() {}
 
-    public pushAsset(path: string, content: string | Blob): this {
+    public pushAsset(path: string, content: string | Blob | Buffer): this {
         // TODO: Check conflicts with previous assets
         // TODO: Optimize images
         // TODO: Make list of supported mime types
+        // TODO: Check all assets are used
+        this.assets.push({ path, content });
         return this;
     }
 
@@ -72,8 +74,8 @@ export class WhiteboardFile {
             throw new Error('WhiteboardFile internal error');
         }
 
-        for (const asset of this.assets) {
-            assetsFolder.file('smile.gif', asset);
+        for (const { path, content } of this.assets) {
+            assetsFolder.file(path, content);
         }
 
         return await zipArchive.generateAsync({ type: 'nodebuffer' });
