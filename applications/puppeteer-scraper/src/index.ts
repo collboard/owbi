@@ -5,19 +5,15 @@ import { scrapeFigjam } from './scrapeFigjam';
 main();
 
 async function main() {
-    const whiteboard = await scrapeFigjam(`https://www.figma.com/file/6a7xn9gzjgrhUS8ad2zNLH/Untitled`);
+    const figmaUrl = process.argv[2];
+    const resultPath = join(process.cwd(), process.argv[3]);
 
-    await writeFile(
-        join(process.cwd(), 'whiteboards', /*v4().split('-')[0]*/ '6a7xn9gzjgrhUS8ad2zNLH.html'),
-        await whiteboard.toHtml(),
-    );
+    const whiteboard = await scrapeFigjam(figmaUrl);
 
-    await writeFile(
-        join(process.cwd(), 'whiteboards', /*v4().split('-')[0]*/ '6a7xn9gzjgrhUS8ad2zNLH.owb'),
-        await whiteboard.toBuffer(),
-    );
+    await writeFile(`${resultPath}.html`, await whiteboard.toHtml());
+    await writeFile(`${resultPath}.owb`, await whiteboard.toBuffer());
 
-    console.info('Saved!');
+    console.info(['Created:', `${resultPath}.html`, `${resultPath}.owb`].join('\n'));
     process.exit(0);
 
     // TODO: On error process.exit(1);

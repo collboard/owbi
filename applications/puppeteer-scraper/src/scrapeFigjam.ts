@@ -5,7 +5,7 @@ import { WhiteboardFile } from '../../file-parser/src/WhiteboardFile';
 
 export async function scrapeFigjam(url: string): Promise<WhiteboardFile> {
     const browser = await puppeteer.launch({
-        headless: true,
+        //headless: false,
         executablePath: await locateChrome(),
         defaultViewport: null,
         //args: ['--proxy-server=socks5://127.0.0.1:9050']
@@ -26,13 +26,14 @@ export async function scrapeFigjam(url: string): Promise<WhiteboardFile> {
 
     await page.goto(url, { waitUntil: 'networkidle2' });
 
-    await forTime(100);
+    await forTime(10);
 
     // Remove UI
     await page.evaluate(`document.querySelector("[class^='footer_banner']").remove();`);
     await page.evaluate(`document.querySelector("[class^='toolbar_view--']").remove();`);
+    // TODO: Remove HW acceleration warning
 
-    await forTime(3000);
+    //await forEver();
 
     const fullPageScreenshotBuffer = (await page.screenshot({ type: 'png', fullPage: true })) as Buffer;
     const fullPageData = `data:image/png;base64,${fullPageScreenshotBuffer.toString('base64')}`;
