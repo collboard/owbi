@@ -3,10 +3,14 @@
 OWBI is an initiative for standartizing the way how digital whiteboards exchange the data.
 
 This is proposal of version 🍂 `1.0.0` created by [Pavol Hejný](https://pavolhejny.com), co-author of [online whiteboard Collboard](https://collboard.com).
-This proposal is implemented with [multiple sample applications](/applications)) during the [HackPrague](https://www.hackprague.com/hackathon2021) hackathon.
 
 ![OWBI](./assets/wallpaper.crop.png)
 
+## 🐱‍👤 HackPrague
+
+This proposal is implemented with [multiple sample applications](/applications)) during the [HackPrague](https://www.hackprague.com/hackathon2021) hackathon. See the video:
+
+https://youtu.be/PWjKxIvIOQM
 
 
 ## 🚵 Roadmap
@@ -42,11 +46,13 @@ Our goal is to capture all **essential features of the whiteboards**. Thay at th
 -   Preserve history
 -   Decentralize & distribute storage of the whiteboards
 
-## File for offline use
+## 📁 File for offline use
 
-We describe here `.OWB` file extension as universal whiteboard format.
+We [describe here](/applications/file-parser/src/WhiteboardFile.ts) `.OWB` file extension as universal whiteboard format.
 
-## API for real-time interaction
+<!--TODO: Describe it-->
+
+## 🔗 API for real-time interaction
 
 We describe here protocol for real-time communication & federation between users and whiteboards.
 This is implemented by Socket.io API and [Superface OneSDK](https://superface.ai/).
