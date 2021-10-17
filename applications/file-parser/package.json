@@ -1,0 +1,14 @@
+{
+  "name": "file-parser",
+  "version": "0.1.0",
+  "dependencies": {
+    "jszip": "^3.7.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.11.1"
+  },
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

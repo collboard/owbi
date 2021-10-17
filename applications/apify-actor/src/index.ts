@@ -4,7 +4,7 @@ import { locateChrome } from 'locate-app';
 Apify.main(async () => {
     const requestQueue = await Apify.openRequestQueue();
     // Choose the first URL to open.
-    await requestQueue.addRequest({ url: 'https://www.iana.org/' });
+    await requestQueue.addRequest({ url: 'https://www.figma.com/file/6a7xn9gzjgrhUS8ad2zNLH/Untitled' });
 
     const crawler = new Apify.PuppeteerCrawler({
         requestQueue,

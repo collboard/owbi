@@ -8,8 +8,24 @@
             "cwd": "./applications/apify-actor"
         },
         {
+            "name": "📂 browser-webextension",
+            "cwd": "./applications/browser-webextension"
+        },
+        {
+            "name": "📂 collboard-module",
+            "cwd": "./applications/collboard-module"
+        },
+        {
+            "name": "📂 file-parser",
+            "cwd": "./applications/file-parser"
+        },
+        {
             "name": "📂 puppeteer-scraper",
             "cwd": "./applications/puppeteer-scraper"
+        },
+        {
+            "name": "📂 superface-usecase",
+            "cwd": "./applications/superface-usecase"
         }
     ]
 }

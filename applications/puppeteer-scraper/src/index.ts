@@ -6,7 +6,21 @@ main();
 
 async function main() {
     const whiteboard = await scrapeFigjam(`https://www.figma.com/file/6a7xn9gzjgrhUS8ad2zNLH/Untitled`);
-    console.log({ whiteboard });
 
-    await writeFile(join(process.cwd(), '6a7xn9gzjgrhUS8ad2zNLH.png'), whiteboard);
+    await writeFile(
+        join(process.cwd(), 'whiteboards', /*v4().split('-')[0]*/ '6a7xn9gzjgrhUS8ad2zNLH.html'),
+        await whiteboard.toHtml(),
+    );
+
+    await writeFile(
+        join(process.cwd(), 'whiteboards', /*v4().split('-')[0]*/ '6a7xn9gzjgrhUS8ad2zNLH.owb'),
+        await whiteboard.toBuffer(),
+    );
+
+    console.info('Saved!');
+    process.exit(0);
+
+    // TODO: On error process.exit(1);
+
+    // TODO: await (await whiteboard.toBlob()).stream()
 }
