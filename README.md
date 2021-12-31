@@ -1,3 +1,5 @@
+# `This project was drafted on hackathon. Expect a pure code quality, outdated dependencies and lot of unfinished work`
+
 # ♾️ Open whiteboard initiative
 
 OWBI is an initiative for standardizing the way how digital whiteboards exchange data.
